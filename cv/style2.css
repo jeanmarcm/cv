@@ -1,0 +1,454 @@
+<style>
+		html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+
+}
+
+body {
+	line-height: 1.4;
+	max-width:800px;
+	font-family: 'helvetica', cursive;
+	text-align:center;
+	font-size:14px;
+	padding:15px;
+	line-height: 1.4;
+	margin: 0 auto;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+footer {
+	background:#ffff66;
+	height: 100px; width:100px;
+	margin-left: 4%;
+	border-radius: 50% ;
+	color:#1400ff;
+	position: relative;
+	top:5vh;
+	z-index: 300;
+	transform: rotate(-10deg);
+}
+
+
+h1{	
+	font-size:20px;
+	text-align:center; 
+	padding-top:15px; 
+	color: white;
+	margin:0;
+	font-weight: 100;
+}
+
+h2{	font-size:18px;text-align:center;
+	display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+	font-weight: light ;
+	font-weight: 100;
+}
+
+h3{	
+	font-weight: 100;
+	font-size:14px; 				   
+	padding-top:5px; 
+	margin:0;
+}
+
+h4{	
+	font-weight: 100;
+	font-size:20px;
+	padding:0px;
+	text-align:center ;
+	color:#f9004a; }
+
+h5{	font-weight: 100;
+	font-size:14px;
+	text-align:center;
+	color:#f9004a;}
+
+h6{	font-size:14px;
+	font-weight: 100;
+	text-align:center;}
+
+ p{text-align:left; 
+	margin-left: 15%;
+}
+
+.top{
+	margin:0 auto;
+	width:800px;
+	height:320px;
+	background: #ff6666;
+	font-family: 'helvetica', cursive;
+	color:white;
+	padding:0;
+	border-radius: 20px 20px 20px 20px;
+	z-index:200;
+	position: fixed;
+	top:20px;
+}
+
+div.folio{
+	position:relative;
+	width:800px;
+	height: 1000px;
+	z-index:300;
+}
+a :hover{
+	color :#ff6666;
+} 
+
+i .fa :hover{
+ 	color :#ff6666;
+}
+
+.cv {
+	font-size:15px;  
+	background:white; 
+	float:left;
+	text-align:center;   
+	padding:0;
+	width:800px;
+
+	margin:0 auto;
+
+	padding:0;
+	border-radius: 10px;
+	position: relative;
+	top:0;
+	background-color: white;
+	z-index:300; 
+}
+	
+#viewerContainer {
+    overflow: auto;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: none;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+	background: white;
+}
+
+.folio div body{
+    background-color: red;
+    overflow: hidden;
+}
+
+.outerContainer {
+	z-index:200;
+	position: relative;
+}
+
+#toolbarContainer, .findbar, .secondaryToolbar {
+    position: relative;
+    height: 32px;
+    background-color: #474747;
+    background-image: url(images/texture.png), linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
+}
+
+.pdfViewer .page {
+    direction: rtl;
+    width: 816px;
+    height: 100%;
+    margin: 1px auto -8px auto;
+    position: relative;
+    overflow: scroll;
+    border: 9px solid transparent;
+	border-image-source: none;
+	border-image-slice: 100%;
+	border-image-width: 1;
+	border-image-outset: 0;
+	border-image-repeat: stretch stretch;
+    background-clip: content-box;
+    border-image: url(images/shadow.png) 9 9 repeat;
+    z-index:300;
+}
+
+.space {width:100%;
+	margin:0 auto;
+	z-index:100;
+	position: fixed;
+	height:300px;
+	background-color:white;z-index:100;}
+
+.space2 {height: 350px; display:block;
+}
+
+.sect1{
+	margin:0 auto;
+	width:800px;
+	position:absolute;
+	top: 340px;
+	height:300%;
+	background-color:white;
+	}
+
+.image{
+	width:20%;
+	text-align:"center";
+	float:left;
+	margin-top:25px;}
+
+.lettre  {
+	display: block;
+	text-align:center;
+	width:70%;
+	float:center;
+	margin:auto;
+	padding:15px;
+}
+
+.address{
+	width:50%;
+	
+	text-align:right;
+	margin-top:5px;
+	padding-right:10px;
+	float:left;
+}
+
+
+.address2{
+	float:left;
+	text-align:left;
+	width:40%;
+	padding-left:10px;
+	margin-top:5px;
+	float:left;
+}
+
+.rond1 {height:94px;
+	width:100px;
+	text-align: center;
+	border-radius: 50% ;
+	color:#66ffff;
+	background-color: #ffff66;
+	padding:5px;
+	padding-top:10px;
+	font-size: 16px;
+ 	transform: translateY(0);
+	position:relative;
+	top: -60px;
+  	left: 25px;
+  	z-index: 400;
+  	transform: rotate(-10deg);
+}
+
+.rond2 {height:94px;
+	width:100px;
+	text-align: center;
+	border-radius: 50% ;
+	background-color: #66ffff;
+	padding:5px;
+	padding-top:10px;
+	font-size: 16px;
+	color: white;
+ 	transform: translateY(0);
+	position:relative;
+	top: -50px;
+  left: 25px;
+  z-index: 400;
+	transform: rotate(-10deg);
+}
+
+.rond3 {height:94px;
+	width:100px;
+	text-align: center;
+	border-radius: 50% ;
+	background-color: #66ffff;
+	padding:5px;
+	padding-top:10px;
+	font-size: 16px;
+	color: #ffff66;
+ 	transform: translateY(0);
+	position:relative;
+	top: -50px;
+  	left: 25px;
+  	z-index: 400;
+	transform: rotate(-10deg);
+}
+.comp {
+	width:100%;
+	margin-top:15px;}
+
+.yellow1 {
+		border-radius:  20px 20px 20px 20px; margin:0;
+		font-size:15px;  background:#ffff66; float:left;
+		text-align:center; color:gray; margin:1px; padding:0; width:800px;}
+
+.green {border-radius:  20px 20px 20px 20px;
+		font-size:15px;  background:#a0ff66; float:left;
+		text-align:left; color:gray; margin:1px; padding:0;
+		width:800px;}
+
+.cyan {border-radius:  20px 20px 20px 20px;
+		font-size:15px;  background:#66ffff; float:left;
+		text-align:center; color:gray; margin:1px; padding:0;
+		width:800px;}
+
+.green1 {border-radius:  20px 20px 20px 20px;
+		font-size:15px;  background:#ff6170; float:left;
+		text-align:left; color:white; margin:1px; padding:0; width:800px;}
+
+/**.yellow{border-radius:  20px 20px 20px 20px;
+		font-size:15px; width:100%;  background:yellow; float:left;
+		text-align:center; color:#00f700; margin:1px; padding:0;max-width:800px;}
+
+.yellow1{border-radius:  20px 20px 20px 20px;
+		font-size:15px; width:100%;  background:yellow; float:left;
+		text-align:center; color:#f9004a; margin:1px; padding:0;max-width:800px;}
+		**/
+
+
+.yellow1 h2{color:#66ffff;}
+.cyan h2{color:#ffff66;}
+.green h2{color:white;}
+
+.yellow2{width:100%; background:yellow;
+}
+
+.dipl{height:22vh;background-color: rgba(0, 235, 243, 0.5);}
+
+.textfin{height:22vh; background:rgba(0, 235, 243, 0.8);}
+
+
+.exp{margin: 15px 0 15px 0;}
+
+.clear {clear:both;}
+
+#green {background:#00f700; color:yellow;}
+
+#text1 {background:white}
+#text2 {background:#c6c6c6}
+
+
+#footer{
+	-webkit-transition:all 0.3s linear;
+
+}
+
+#footer:hover{
+     -webkit-transform:rotate(-30deg);
+		 background-color: white;
+		 color :#ff6170;
+}
+
+
+.rond2 {-webkit-transition:all 0.3s linear;
+}
+
+.rond2:hover {
+     -webkit-transform:rotate(-30deg);
+	 background: white;
+	 color : #ff6170;
+}
+
+.fa :hover {
+	color : #ff6170;
+}
+
+
+.rond1 {-webkit-transition:all 0.3s linear;
+
+}
+
+.rond1:hover {
+     -webkit-transform:rotate(-30deg);
+	 background: white;
+	 color : #ff6170;
+}
+
+.rond3 {
+	-webkit-transition:all 0.3s linear;
+
+}
+
+.rond3:hover {
+     -webkit-transform:rotate(-30deg);
+	background: white;
+	color : #ff6170;
+}
+
+
+@media screen and (max-width:1050px){
+	#container{
+		width:850px;
+	}
+}
+
+/***max-width concerne tout ce qui est en dessous de****/
+
+/*entre 780 et 1050 px, le container fera 750px*/
+
+@media screen and (max-width:850px){
+	#container{
+		width:550px;
+	}
+}
+/*pour mobile Entre 580 et 781, le container fera 550px*/
+
+@media screen and (max-width:800px){
+	body{
+
+
+
+	}
+
+	section{
+
+	}
+
+	#container{
+
+	}
+
+.cyan,.green,.yellow1, .adresse1 .adressse2{
+	width: 100%;
+
+	}
+}
